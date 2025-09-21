@@ -38,22 +38,22 @@ This is a simple boilerplate for a FastAPI application, designed to help you qui
 
 To run the app, use the following command:
 
-    ```bash
-    uvicorn main:app --reload
-    ```
+ ```bash
+ uvicorn main:app --reload
+ ```
 
 The app will be accessible at `http://localhost:8000`. You can view the interactive API documentation at `http://localhost:8000/docs`.
 
 # Project Structure
 
-    ```
-    fastapi-boilerplate/
-    │
-    ├── api/ # API routes and logic
-    │ ├── routes/ # All route definitions
-    │ ├── app.py # Main FastAPI app
-    │
-    ├── main.py # Entry point for running the app
-    ├── requirements.txt # Project dependencies
-    └── README.md # This file
-    ```
+ ```
+ fastapi-boilerplate/
+ │
+ ├── api/ # API routes and logic
+ │ ├── routes/ # All route definitions
+ │ ├── app.py # Main FastAPI app
+ │
+ ├── main.py # Entry point for running the app
+ ├── requirements.txt # Project dependencies
+ └── README.md # This file
+ ```
