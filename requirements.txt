@@ -1,0 +1,7 @@
+# FastAPI Core
+fastapi
+uvicorn[standard]
+pydantic
+
+# Rate Limiting
+slowapi
