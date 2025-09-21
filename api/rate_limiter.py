@@ -3,6 +3,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from fastapi import FastAPI
+import config as conf
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -21,9 +22,9 @@ def rate_limit_relaxed():
     return limiter.limit("100/minute")
 
 class RateLimitConfig:
-    GENERAL = "100/minute"
-    CRUD = "50/minute"
-    STOCK = "30/minute"
-    BULK = "10/minute"
-    READ = "150/minute"
-    WRITE = "20/minute"
+    GENERAL = conf.rl_general
+    CRUD = conf.rl_crud
+    STOCK = conf.rl_stock
+    BULK = conf.rl_bulk
+    READ = conf.rl_read
+    WRITE = conf.rl_write

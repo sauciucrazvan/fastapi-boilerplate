@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.rate_limiter import setup_rate_limiting
 from .routes import test
+import config as conf
 
 app = FastAPI(title="FastAPI Application", version="1.0.0")
 
@@ -19,13 +20,13 @@ def runApp():
     
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:3000"],
+        allow_origins=conf.allowed_cors_origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
 
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host=conf.server_address, port=conf.server_port)
 
 def getApp():
     global app
